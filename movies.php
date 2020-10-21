@@ -1,3 +1,10 @@
+<?php
+include "db.php";
+
+$query = "SELECT * FROM movie";
+
+$result = mysqli_query($connection, $query);
+?>
 <!DOCTYPE HTML>
 <html>
 
@@ -44,7 +51,7 @@
 
 				<li><a href="addMovie.php">Add Movie</a></li>
 
-				<li><a href="contact.html">Contact Us</a></li>
+				<li><a href="testimonials.php">Testimonials</a></li>
 			</ul>
 		</nav>
 
@@ -58,95 +65,22 @@
 				</div>
 
 				<!-- Offers -->
-				<section class="tiles">
-					<article class="style1">
-						<span class="image">
-							<img src="images/other-1-720x480.jpg" alt="" />
-						</span>
-						<a href="#footer" class="scrolly">
-							<h2>Lorem ipsum dolor sit amet, consectetur</h2>
-
-							<p>price from: <strong> $ 140.00</strong> per weekend</p>
-
-							<div class="content">
-								<p>Vestibulum id est eu felis vulputate hendrerit. Suspendisse dapibus turpis in dui pulvinar imperdiet. Nunc consectetur.</p>
-							</div>
-						</a>
-					</article>
-					<article class="style2">
-						<span class="image">
-							<img src="images/other-2-720x480.jpg" alt="" />
-						</span>
-						<a href="#footer" class="scrolly">
-							<h2>Lorem ipsum dolor sit amet, consectetur</h2>
-
-							<p>price from: <strong> $ 140.00</strong> per weekend</p>
-
-							<div class="content">
-								<p>Vestibulum id est eu felis vulputate hendrerit. Suspendisse dapibus turpis in dui pulvinar imperdiet. Nunc consectetur.</p>
-							</div>
-						</a>
-					</article>
-					<article class="style3">
-						<span class="image">
-							<img src="images/other-3-720x480.jpg" alt="" />
-						</span>
-						<a href="#footer" class="scrolly">
-							<h2>Lorem ipsum dolor sit amet, consectetur</h2>
-
-							<p>price from: <strong> $ 140.00</strong> per weekend</p>
-
-							<div class="content">
-								<p>Vestibulum id est eu felis vulputate hendrerit. Suspendisse dapibus turpis in dui pulvinar imperdiet. Nunc consectetur.</p>
-							</div>
-						</a>
-					</article>
-
-					<article class="style4">
-						<span class="image">
-							<img src="images/other-4-720x480.jpg" alt="" />
-						</span>
-						<a href="#footer" class="scrolly">
-							<h2>Lorem ipsum dolor sit amet, consectetur</h2>
-
-							<p>price from: <strong> $ 140.00</strong> per weekend</p>
-
-							<div class="content">
-								<p>Vestibulum id est eu felis vulputate hendrerit. Suspendisse dapibus turpis in dui pulvinar imperdiet. Nunc consectetur.</p>
-							</div>
-						</a>
-					</article>
-
-					<article class="style5">
-						<span class="image">
-							<img src="images/other-5-720x480.jpg" alt="" />
-						</span>
-						<a href="#footer" class="scrolly">
-							<h2>Lorem ipsum dolor sit amet, consectetur</h2>
-
-							<p>price from: <strong> $ 140.00</strong> per weekend</p>
-
-							<div class="content">
-								<p>Vestibulum id est eu felis vulputate hendrerit. Suspendisse dapibus turpis in dui pulvinar imperdiet. Nunc consectetur.</p>
-							</div>
-						</a>
-					</article>
-
-					<article class="style6">
-						<span class="image">
-							<img src="images/other-5-720x480.jpg" alt="" />
-						</span>
-						<a href="#footer" class="scrolly">
-							<h2>Lorem ipsum dolor sit amet, consectetur</h2>
-
-							<p>price from: <strong> $ 140.00</strong> per weekend</p>
-
-							<div class="content">
-								<p>Vestibulum id est eu felis vulputate hendrerit. Suspendisse dapibus turpis in dui pulvinar imperdiet. Nunc consectetur.</p>
-							</div>
-						</a>
-					</article>
-				</section>
+				<?php
+				while ($row = mysqli_fetch_row($result)) {
+				?>
+					<div class="card" style="width: 18rem">
+						<img class="card-img-top" src="<?php echo $row[3] ?>" alt="" />
+						<div class="card-body">
+							<h2 class="card-title"><?php echo $row[1] ?></h2>
+							<p class="card-text"><?php print_r($row[2]) ?></p>
+							</a>
+						</div>
+						<a class="btn btn-primary text-light" href="rate.php">RATE</a>
+					</div>
+					<br />
+				<?php
+				}
+				?>
 			</div>
 		</div>
 
@@ -204,7 +138,7 @@
 					<h2>Contact Info</h2>
 
 					<ul class="alt">
-						<li><span class="fa fa-envelope-o"></span> <a href="#">contact@company.com</a></li>
+						<li><span class="fa fa-envelope-o"></span> <a href="#">ratewebsite@ratewebsite.com</a></li>
 						<li><span class="fa fa-phone"></span> +1 333 4040 5566 </li>
 						<li><span class="fa fa-map-pin"></span> 212 Barrington Court New York, ABC 10001 United States of America</li>
 					</ul>
@@ -218,11 +152,6 @@
 						<li><a href="#" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
 					</ul>
 				</section>
-
-				<ul class="copyright">
-					<li>Copyright © 2020 Company Name </li>
-					<li>Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></li>
-				</ul>
 			</div>
 		</footer>
 
