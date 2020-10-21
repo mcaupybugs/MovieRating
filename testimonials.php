@@ -38,11 +38,7 @@
         <li><a href="index.php">Home</a></li>
 
         <li><a href="movies.php">Movies</a></li>
-
-
-        <li>
-          <a href="#" class="dropdown-toggle">About</a>
-        </li>
+        <li><a href="addMovie.php">Add Movie</a></li>
         <a href="testimonials.html" class="active">Testimonials</a>
       </ul>
     </nav>

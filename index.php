@@ -38,6 +38,7 @@
         <li><a href="index.php" class="active">Home</a></li>
 
         <li><a href="movies.php">Movies</a></li>
+        <li><a href="addMovie.php">Add Movie</a></li>
         <li><a href="testimonials.php">Testimonials</a></li>
       </ul>
     </nav>
