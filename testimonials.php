@@ -39,7 +39,7 @@
 
         <li><a href="movies.php">Movies</a></li>
         <li><a href="addMovie.php">Add Movie</a></li>
-        <a href="testimonials.html" class="active">Testimonials</a>
+        <a href="testimonials.php" class="active">Testimonials</a>
       </ul>
     </nav>
 

@@ -6,8 +6,9 @@ if (isset($_POST["submit"])) {
     $temp = "Running";
     $title = $_POST["title"];
     $url = $_POST["url"];
+    $rating = $_POST["rating"];
     $description = $_POST["description"];
-    $query = "INSERT INTO movie(title,description,url) VALUES ('$title','$description','$url')";
+    $query = "INSERT INTO movie(title,description,url,rating) VALUES ('$title','$description','$url','$rating')";
     $rr = mysqli_query($connection, $query);
     if (!$rr) {
     } else {
@@ -27,7 +28,7 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-    <div class="container">
+    <div style="margin-top:10px ;padding-bottom:10px; padding-top:10px" class="container border primary">
         <form action="addMovie.php" method="POST">
             <div class="form-group">
                 <label for="title">Title</label>
@@ -41,9 +42,12 @@ if (isset($_POST["submit"])) {
                 <label for="Description">Image Description</label>
                 <input type="text" class="form-control" placeholder="Enter description of movie" name="description">
             </div>
+            <div class="form-group">
+                <label for="Description">Rating out of 5</label>
+                <input type="text" class="form-control" placeholder="Enter description of movie" name="rating">
+            </div>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
     </div>
-
     </form>
     </div>
 </body>

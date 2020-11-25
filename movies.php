@@ -45,9 +45,9 @@ $result = mysqli_query($connection, $query);
 		<nav id="menu">
 			<h2>Menu</h2>
 			<ul>
-				<li><a href="index.html">Home</a></li>
+				<li><a href="index.php">Home</a></li>
 
-				<li><a href="movies.html" class="active">Movies</a></li>
+				<li><a href="movies.php" class="active">Movies</a></li>
 
 				<li><a href="addMovie.php">Add Movie</a></li>
 
@@ -73,7 +73,7 @@ $result = mysqli_query($connection, $query);
 						<div class="card-body">
 							<h2 class="card-title"><?php echo $row[1] ?></h2>
 							<p class="card-text"><?php print_r($row[2]) ?></p>
-							</a>
+							<p class="card-text">Rating: <?php print_r($row[4]) ?>/5</p>
 						</div>
 						<a class="btn btn-primary text-light" href="rate.php">RATE</a>
 					</div>
@@ -87,53 +87,6 @@ $result = mysqli_query($connection, $query);
 		<!-- Footer -->
 		<footer id="footer">
 			<div class="inner">
-				<section>
-					<h2>Book now</h2>
-					<form method="post" action="#">
-						<div class="fields">
-							<div class="field half">
-								<input type="text" name="name" id="name" placeholder="Your Name" />
-							</div>
-
-							<div class="field half">
-								<select name="vehicle-type" id="vehicle-type">
-									<option value="">Select Offer A</option>
-									<option value="">Select Offer B</option>
-									<option value="">Select Offer C</option>
-									<option value="">Select Offer D</option>
-								</select>
-							</div>
-
-							<div class="field half">
-								<input type="text" name="date-from" id="date-from" placeholder="Pick-up date/time" />
-							</div>
-
-							<div class="field half">
-								<input type="text" name="date-to" id="date-to" placeholder="Return date/tiem" />
-							</div>
-
-							<div class="field half">
-								<input type="text" name="email" id="email" placeholder="Email" />
-							</div>
-
-							<div class="field half">
-								<input type="text" name="phone" id="phone" placeholder="Phone" />
-							</div>
-
-							<div class="field">
-								<textarea name="message" id="message" rows="3" placeholder="Comment"></textarea>
-							</div>
-
-							<div class="field text-right">
-								<label>&nbsp;</label>
-
-								<ul class="actions">
-									<li><input type="submit" value="Book now" class="primary" /></li>
-								</ul>
-							</div>
-						</div>
-					</form>
-				</section>
 				<section>
 					<h2>Contact Info</h2>
 
@@ -154,9 +107,7 @@ $result = mysqli_query($connection, $query);
 				</section>
 			</div>
 		</footer>
-
 	</div>
-
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
