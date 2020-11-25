@@ -46,11 +46,13 @@ $result = mysqli_query($connection, $query);
 			<h2>Menu</h2>
 			<ul>
 				<li><a href="index.php">Home</a></li>
+				<li><a href="blog.php">Blog</a></li>
 
 				<li><a href="movies.php" class="active">Movies</a></li>
 
 				<li><a href="addMovie.php">Add Movie</a></li>
-
+				<li><a href="login.php">Login</a></li>
+				<li><a href="logout.php">Logout</a></li>
 				<li><a href="testimonials.php">Testimonials</a></li>
 			</ul>
 		</nav>
@@ -75,7 +77,7 @@ $result = mysqli_query($connection, $query);
 							<p class="card-text"><?php print_r($row[2]) ?></p>
 							<p class="card-text">Rating: <?php print_r($row[4]) ?>/5</p>
 						</div>
-						<a class="btn btn-primary text-light" href="rate.php">RATE</a>
+						<!-- <a class="btn btn-primary text-light" href="rate.php">RATE</a> -->
 					</div>
 					<br />
 				<?php

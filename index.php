@@ -36,9 +36,11 @@
       <h2>Menu</h2>
       <ul>
         <li><a href="index.php" class="active">Home</a></li>
-
+        <li><a href="blog.php">Blog</a></li>
         <li><a href="movies.php">Movies</a></li>
         <li><a href="addMovie.php">Add Movie</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="logout.php">Logout</a></li>
         <li><a href="testimonials.php">Testimonials</a></li>
       </ul>
     </nav>
